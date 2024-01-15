@@ -5,6 +5,8 @@ const PORT = 5050;
 
 const app = express();
 
+app.use(express.json());
+
 mongoose.connect(process.env.MONGODB_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
