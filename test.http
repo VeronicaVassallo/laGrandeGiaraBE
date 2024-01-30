@@ -1,0 +1,16 @@
+POST http://localhost:5050/product/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "productName": "Bronte",
+    "ingredients": "Mozzarella di bufala, crudo, pesto di pistacchio, pomodorini, granella di pistacchio",
+    "price": 13,
+    "img": "https://media-cdn.tripadvisor.com/media/photo-s/24/7a/20/39/caption.jpg",
+    "typology": "pizza"
+}
+
+####
+GET http://localhost:5050/product HTTP/1.1
+
+####
+GET http://localhost:5050/product/pizza HTTP/1.1

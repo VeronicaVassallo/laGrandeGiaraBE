@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const pizza = new mongoose.Schema(
+const product = new mongoose.Schema(
 	{
-		pizzaName: {
+		productName: {
 			type: String,
 			required: true,
 		},
@@ -21,10 +21,20 @@ const pizza = new mongoose.Schema(
 		typology: {
 			type: String,
 			required: true,
-			default: ["rossa", "bianca"],
+			default: [
+				"antipasti rustici",
+				"antipasti di mare",
+				"primi",
+				"secondi",
+				"contorno",
+				"pizza",
+				"schiacciate",
+				"mezzelune",
+				"dessert",
+			],
 		},
 	},
 	{ timestamps: true, strict: true }
 );
 
-module.exports = mongoose.model("pizzaSchema", pizza, "pizzaTable");
+module.exports = mongoose.model("productSchema", product, "productTable");
