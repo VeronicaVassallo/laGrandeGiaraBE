@@ -8,7 +8,6 @@ const product = new mongoose.Schema(
 		},
 		ingredients: {
 			type: String,
-			required: true,
 		},
 		price: {
 			type: Number,
@@ -16,7 +15,6 @@ const product = new mongoose.Schema(
 		},
 		img: {
 			type: String,
-			required: true,
 		},
 		typology: {
 			type: String,
