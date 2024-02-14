@@ -25,7 +25,7 @@ const cloudStorage = new CloudinaryStorage({
 const cloudUpload = multer({ storage: cloudStorage });
 
 productRouter.post(
-	"/post/cloudUpload",
+	"/product/cloudUpload",
 	cloudUpload.single("img"),
 	async (req, res) => {
 		try {
@@ -39,7 +39,7 @@ productRouter.post(
 		}
 	}
 );
-/*POST // to do: CONTINUA CLOUDINARI*/
+/*POST*/
 productRouter.post("/product/create", async (req, res) => {
 	const newProduct = new productModel({
 		productName: req.body.productName,
