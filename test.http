@@ -14,3 +14,18 @@ GET http://localhost:5050/product HTTP/1.1
 
 ####
 GET http://localhost:5050/product/pizza HTTP/1.1
+
+####
+DELETE http://localhost:5050/product/delete/65ccc8cf805175ffca0df47c HTTP/1.1
+
+####
+PUT http://localhost:5050/product/modify/65ccbef4612712503c2dc3aa HTTP/1.1
+Content-Type: application/json
+
+{
+     "productName": "Margherita",
+    "ingredients": "Mozzarella di bufala, crudo, pesto di pistacchio, pomodorini, granella di pistacchio",
+    "price": 6,
+    "img": "https://res.cloudinary.com/db2xyqg13/image/upload/v1707916854/public/hou6sckzpulx9eissga9.jpg",
+    "typology": "pizza" 
+}
