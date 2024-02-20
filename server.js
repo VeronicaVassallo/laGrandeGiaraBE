@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
 const cors = require("cors");
 const productRouter = require("../laGrandeGiaraBE/routes/productRoute");
+const adminRouter = require("../laGrandeGiaraBE/routes/adminRoute");
+const loginRouter = require("../laGrandeGiaraBE/routes/login");
+require("dotenv").config();
 
 const PORT = 5050;
 
@@ -12,7 +14,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 //routes
+app.use("/", adminRouter);
 app.use("/", productRouter);
+app.use("/", loginRouter);
 
 mongoose.connect(process.env.MONGODB_URL, {});
 
