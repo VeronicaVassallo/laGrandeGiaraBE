@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const productRoute = require("../laGrandeGiaraBE/routes/productRoute");
-const adminRouter = require("../laGrandeGiaraBE/routes/adminRoute");
-const loginRouter = require("../laGrandeGiaraBE/routes/login");
+const productRoute = require("./routes/productRoute");
+const adminRouter = require("./routes/adminRoute");
+const loginRouter = require("./routes/login");
 require("dotenv").config();
 
 const PORT = 5050;
