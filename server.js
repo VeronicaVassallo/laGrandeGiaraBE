@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-//const productRoute = require("../laGrandeGiaraBE/routes/productRoute");
+const productRoute = require("../laGrandeGiaraBE/routes/productRoute");
 const adminRouter = require("../laGrandeGiaraBE/routes/adminRoute");
 const loginRouter = require("../laGrandeGiaraBE/routes/login");
 require("dotenv").config();
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 //routes
 app.use("/", adminRouter);
-//app.use("/", productRoute);
+app.use("/", productRoute);
 app.use("/", loginRouter);
 
 mongoose.connect(process.env.MONGODB_URL, {});
