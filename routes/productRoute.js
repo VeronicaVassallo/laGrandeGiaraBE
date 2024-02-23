@@ -1,13 +1,12 @@
 const express = require("express");
 const productModel = require("../models/productModel");
 const productRouter = express.Router();
-//const verifyToken = require("../middlewares/verifyToken");
 
 //cloudinary
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
-require("dotenv").config;
+require("dotenv").config();
 
 cloudinary.config({
 	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -34,7 +33,7 @@ productRouter.post(
 		} catch (e) {
 			res.status(500).send({
 				statusCode: 500,
-				message: "Internal server error" + error,
+				message: `Internal server error: ${error}`,
 				error,
 			});
 		}
@@ -60,7 +59,7 @@ productRouter.post("/product/create", async (req, res) => {
 	} catch (error) {
 		res.status(500).send({
 			statusCode: 500,
-			message: "internal server error",
+			message: `Internal server error: ${error}`,
 		});
 	}
 });
